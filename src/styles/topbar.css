@@ -1,0 +1,96 @@
+/* Topbar container */
+.topbar {
+  height: 72px;
+  width: 100%;
+  background-color: var(--bg-color); /* theme based */
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Topbar left content */
+.topbar-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar-left p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #555; /* optional: can use var(--text-color) if needed */
+}
+
+/* Topbar right content */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Icon buttons */
+.icon {
+  width: 46px;
+  height: 46px;
+  background-color: var(--bg-color); /* theme based */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background-color 0.3s, filter 0.3s;
+}
+
+.icon img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(var(--icon-invert));
+}
+
+/* Profile section */
+.profile {
+  display: flex;
+  gap: 10px;
+  background-color: var(--bg-color); /* theme based */
+  padding: 8px 12px;
+  border-radius: 12px;
+  width: 232px;
+  height: 48px;
+  align-items: center;
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.profile h4 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.profile p {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.profile img {
+  width: 36px;
+  border-radius: 50%;
+}
+
+/* Make sure text inside profile inherits theme colors */
+.profile h4,
+.profile p {
+  color: inherit;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+/* Top content scrollable */
+.top-content {
+  flex: 1;
+  /* overflow-y: auto; */
+}

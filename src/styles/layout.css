@@ -1,0 +1,84 @@
+/* Entire page layout */
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* Main area next to sidebar */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content area */
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* -----------------------------
+   LIGHT MODE
+----------------------------- */
+body.light {
+  background-color: #f9f9f9; /* whole page background */
+  color: #111;               /* default text color */
+}
+
+body.light .main {
+  background-color: #f9f9f9; /* content + topbar area */
+  color: #111;
+}
+
+body.light .content {
+  background-color: #f9f9f9;
+  color: #111;
+}
+
+body.light .topbar {
+  background-color: #f8f8f8;
+  color: #111;
+  border-bottom: 1px solid #eee;
+}
+
+body.light .sidebar {
+  background-color: #fff;
+  color: #000;
+}
+/* dark mode */
+body.dark {
+  background-color: #121212; 
+  color: #f0f0f0;     
+}
+
+body.dark .main {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark .content {
+  background-color: #121212;
+  color: #f0f0f0;   
+}
+
+body.dark .topbar {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  border-bottom: 1px solid #333;
+}
+
+body.dark .sidebar {
+  background-color: #111;
+  color: #f0f0f0;
+}
+
+body.dark .content h1,
+body.dark .content p {
+  color: #f0f0f0;
+}
+
+body.light .content h1,
+body.light .content p {
+  color: #111;
+}

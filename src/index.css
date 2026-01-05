@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* global styles ya App.css me add karo */
+html, body {
+  overflow-x: hidden; 
+      
+}
+/* --- Theme variables --- */
+body.light {
+  --bg-color: #fff;           /* Background color for light theme */
+  --text-color: #000;         /* Text color */
+  --primary-color: #1e7f4f;   /* Active menu item / primary color */
+  --secondary-color: #e9f7ef; /* Secondary color / active background */
+  --icon-invert: 0;           /* For icon brightness */
+}
+
+body.dark {
+  --bg-color: #111;           
+  --text-color: #f0f0f0;     
+  --primary-color: #a8f0c1;  
+  --secondary-color: #1a3b2c;
+  --icon-invert: 1;           
+}
+
+/* --- Apply variables globally --- */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.app {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  padding: 24px;
+  background: #f8f9fb;
+}
