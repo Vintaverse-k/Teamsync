@@ -1,13 +1,25 @@
 .dashboard-container {
-  padding: 24px;
-  background-color: white;
+  /* padding: 24px; */
   color: #1a1a1a;
   border-radius: 16px;
-
   max-width: 100%;       
   box-sizing: border-box; 
 }
 
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.blue-section {
+  background-color: #ffffff; /* blue shade */
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.red-section {
+  border-radius: 12px;
+}
 
 /* Top stats container */
 .top-stats {
@@ -49,6 +61,7 @@
   font-size: 28px;
   font-weight: 900;
   margin: 0;
+  color: #141414;
 }
 
 .change {
@@ -189,10 +202,10 @@
 .main-wrapper {
   display: flex;
   gap: 24px;
-  padding: 24px;
-  background-color: #f9fafb;
 }
-
+.entry-count{
+  color: black;
+}
 .orders-card, .target-card {
   background: #ffffff;
   border-radius: 12px;
@@ -210,7 +223,7 @@
   margin-bottom: 24px;
 }
 
-.action-group { display: flex; gap: 12px; }
+.action-group { display: flex; gap: 8px; }
 
 .input-field {
   padding: 8px 16px;
@@ -226,8 +239,15 @@
   border-radius: 8px;
   cursor: pointer;
   color: #4a5568;
+  /* margin-right: 10px; */
 }
-
+.title-text{
+  font-size: 16px;
+  color: #000000;
+}
+.qty-text{
+   color: #575b62;
+}
 .expand-icon {
   background: #059669;
   color: #fff;
@@ -245,26 +265,43 @@
 
 .data-grid th {
   text-align: left;
-  color: #718096;
+  color: #000000;
   padding: 16px;
+  font-size: 14px;
+  font-weight: 400;
   border-bottom: 1px solid #f1f5f9;
 }
 
 .data-grid td {
-  padding: 16px;
+  padding: 12px;
   border-bottom: 1px solid #f1f5f9;
-  color: #1a202c;
+  color: #141414;
+  font-size: 14px;
 }
+.row-select{
+      padding: 8px 16px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #4a5568;
+    margin-right: 10px;
 
+}
 .product-info { display: flex; gap: 12px; align-items: center; }
 .thumb-box { width: 42px; height: 42px; background: #f3f4f6; border-radius: 8px; }
 
 .ship-tag {
   background: #fff7ed;
   color: #ea580c;
-  padding: 4px 14px;
+  padding: 4px 12px;
+  width: 91px;
+  height: 24px;
   border-radius: 99px;
   font-size: 13px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   border: 1px solid #ffedd5;
 }
 
@@ -311,5 +348,92 @@
   border-radius: 12px;
 }
 
-.value-txt { font-size: 22px; font-weight: 700; margin-top: 8px; }
-.value-txt.dark { color: #0f172a; }
+.value-txt { font-size: 24px; font-weight: 700; margin-top: 8px;color: #000000;  }
+.value-txt.dark { color: #000000; }
+/* Product thumbnail image */
+.thumb-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ship icon inside status */
+.ship-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff7ed;
+  color: #ea580c;
+  padding: 4px 14px;
+  border-radius: 99px;
+  font-size: 13px;
+  border: 1px solid #ffedd5;
+}
+
+.ship-icon {
+  width: 16px;
+  height: 16px;
+  filter: none !important; 
+  fill: #F9A639;          
+}
+
+/* Options icon inside button */
+.opt-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.opt-icon {
+  width: 24px;
+  height: 24px;
+}
+/* Input with icon inside */
+.icon-input {
+  position: relative;
+  display: inline-block;
+}
+
+.icon-input .input-icon {
+  position: absolute;
+  left: 12px;       /* icon left side */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;      /* icon size */
+  height: 16px;
+  pointer-events: none;
+}
+
+.icon-input .input-field {
+  padding-left: 32px;  
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  outline: none;
+}
+
+/* Buttons with icon inside */
+.filter-btn, .sort-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;           /* space between icon and text */
+  padding: 8px 12px;
+}
+
+.btn-icon {
+  width: 16px;
+  height: 16px;
+}
+.arc-svg {
+  width: 100%;    /* ya fixed px */
+  height: 200px;  /* yahan se height control hoti hai */
+}

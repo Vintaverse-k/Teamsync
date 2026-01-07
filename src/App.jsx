@@ -6,7 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import Orders from "./pages/Orders";
 import Sales from "./pages/Sales";
 import Messages from "./pages/Messages";
-
+import "./index.css";
 function App() {
   const [theme, setTheme] = useState("light"); // default theme
 

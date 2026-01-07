@@ -43,7 +43,7 @@ body.light .topbar {
 }
 
 body.light .sidebar {
-  background-color: #fff;
+  /* background-color: #fff; */
   color: #000;
 }
 /* dark mode */

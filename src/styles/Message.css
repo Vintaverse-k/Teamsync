@@ -1,0 +1,360 @@
+/* Container */
+.message-container {
+  display: flex;
+  height: 100vh;
+  color: #222;
+  gap: 20px;
+}
+
+/* ----------- Left Panel ----------- */
+.contacts-panel {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 12px 16px;
+  box-sizing: border-box;
+}
+
+/* Search bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 8px 12px 8px 36px; /* padding-left for search icon */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Search icon inside input */
+.search-btn {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.search-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Right-side icons */
+.right-icons {
+  display: flex;
+  gap: 8px;
+}
+
+.right-icons button {
+  background: none; /* remove white bg */
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.right-icons img {
+  width: 20px;
+  height: 20px;
+}
+
+.more-btn img {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+/* Platform filters */
+.platform-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px; 
+  font-size: 14px;
+  border-radius: 8px;
+  background: #F8F8F8;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  color: #000;
+  border: none;
+}
+
+.filter-btn img.filter-icon {
+  width: 20px;
+  height: 20px;
+}
+
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #187D4F;
+  border-color: #187D4F;
+  color: #fff;
+}
+
+/* Contacts list */
+.contacts-list {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  position: relative;
+}
+
+.contact-item.selected,
+.contact-item:hover {
+  background: #e6f4ea;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.contact-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.contact-name {
+  font-weight: 700;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.last-message {
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.message-time {
+  font-size: 11px;
+  color: #999;
+  margin-left: 8px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* ----------- Right Panel ----------- */
+.chat-panel {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background: url('../assets/chat-wallpaper.jpg') center center / cover no-repeat;
+  box-sizing: border-box;
+}
+
+.message-bubble {
+  background: rgba(255, 255, 255, 0.9); /* slightly transparent white */
+  padding: 10px 14px;
+  border-radius: 18px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+  font-size: 14px;
+  line-height: 1.4;
+  position: relative;
+  max-width: 100%;
+  word-wrap: break-word;
+  color: #222;
+}
+
+.chat-message.from-me .message-bubble {
+  background: rgba(46, 204, 113, 0.9); /* slightly transparent green */
+  color: white;
+}
+
+/* Header */
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: white;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  border-top-left-radius: 12px;  
+  border-top-right-radius: 12px; 
+}
+
+.chat-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.chat-header-info h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+.chat-header-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat-header-icons {
+  position: absolute;
+  right: 0;
+  top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.chat-header-icons button {
+  background: transparent; /* remove any white bg */
+  border: none;
+  cursor: pointer;
+  padding: 4px; /* reduce extra space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-header-icons img {
+  width: 36px;  /* smaller, consistent size */
+  height: 36px;
+}
+
+/* Date divider */
+.chat-date {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  background: #ffffff; /* light gray background */
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin: 20px auto 16px auto;
+  width: fit-content; /* shrink to text width */
+}
+
+
+/* Chat messages container */
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 12px 16px;
+}
+
+/* Individual message */
+.chat-message {
+  display: flex;
+  gap: 10px;
+  max-width: 75%;
+  align-items: flex-end;
+}
+
+.chat-message.from-me {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.msg-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Message bubble */
+.message-bubble {
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 18px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+  font-size: 14px;
+  line-height: 1.4;
+  position: relative;
+  max-width: 100%;
+  word-wrap: break-word;
+  color: #222;
+}
+
+.chat-message.from-me .message-bubble {
+  background: #187D4F;
+  color: white;
+}
+
+/* Message time */
+.msg-time {
+  font-size: 10px;
+  color: #999;
+  margin-top: 4px;
+  display: block;
+  text-align: right;
+}
+
+/* Chat input */
+.chat-input-container {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.chat-input {
+  flex-grow: 1;
+  border-radius: 24px;
+  border: 1px solid #ccc;
+  padding: 10px 18px;
+  font-size: 14px;
+  resize: none;
+  outline: none;
+  font-family: inherit;
+  min-height: 40px;
+}
+
+.send-btn {
+  background: #2ecc71;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 24px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.send-btn:hover {
+  background: #27ae60;
+}

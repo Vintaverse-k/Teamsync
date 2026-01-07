@@ -1,3 +1,5 @@
+
+
 /* Sidebar container */
 .sidebar {
   padding: 16px;
@@ -9,6 +11,36 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* collapse logo sidebar */
+.sidebar {
+  width: 285px;
+  transition: width 0.3s;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar.collapsed span,
+.sidebar.collapsed h4,
+.sidebar.collapsed p {
+  display: none;
+}
+
+.sidebar.collapsed .menu button {
+  justify-content: center;
+}
+
+.collapse-btn {
+  width: 30px;
+  cursor: pointer;
+  margin-left: auto;
+}
+.sidebar.collapsed .sidebar-header {
+  justify-content: center;
+}
+
+/* collapse logo sidebar  end */ 
 .sidebar * {
   background-color: inherit;
   color: inherit;
@@ -21,10 +53,12 @@
   gap: 10px;
   margin-bottom: 20px;
 }
-
-.sidebar-header img {
-  width: 40px;
+.sidebar-logo{
+  filter: none !important; 
 }
+/* .sidebar-header img {
+  width: 40px;
+} */
 
 .sidebar-header h4 {
   font-size: 18px;
@@ -70,7 +104,6 @@
   gap: 8px;
 }
 
-/* Active menu item colors using CSS variables */
 .menu li.active,
 .bottom li.active {
   background-color: var(--secondary-color);
@@ -96,7 +129,6 @@
   align-items: center;
   margin: 20px 0 10px;
 }
-
 .toggle-icon {
   width: 16px;
   height: 16px;
@@ -125,7 +157,6 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Active theme toggle button colors using CSS variables */
 .theme-toggle button.active {
   background-color: var(--primary-color);
   color: var(--bg-color);

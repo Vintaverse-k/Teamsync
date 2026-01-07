@@ -82,7 +82,6 @@
   border-radius: 50%;
 }
 
-/* Make sure text inside profile inherits theme colors */
 .profile h4,
 .profile p {
   color: inherit;
@@ -93,4 +92,221 @@
 .top-content {
   flex: 1;
   /* overflow-y: auto; */
+}
+.profile {
+  position: relative; /* bottom sheet relative */
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-main {
+  display: flex;
+  justify-content: space-between; /* left info & right icon */
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--bg-color);
+  border-radius: 12px;
+  gap: 10px;
+}
+
+.profile-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-toggle-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s;
+}
+
+.profile-toggle-icon.open {
+  transform: rotate(180deg);
+}
+
+/* Bottom sheet */
+.profile-bottom-sheet {
+  position: absolute;
+  top: 100%; /* just below profile */
+  left: 0;
+  width: 240px;
+  background-color: var(--bg-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  margin-top: 8px;
+  padding: 16px;
+  z-index: 50;
+}
+
+.profile-info-sheet {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.company-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.profile-info-sheet .name {
+  font-weight: 500;
+  margin: 0;
+}
+
+.profile-info-sheet .email {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+.profile-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-menu li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.profile-menu li img {
+  width: 20px;
+  height: 20px;
+}
+/* Notification */
+.notification {
+  position: relative;
+}
+
+.notification-dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  width: 350px;
+  background-color: var(--bg-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 16px;
+  z-index: 50;
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.notification-header h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.see-all-btn {
+  font-size: 12px;
+  color: #3498db;
+  cursor: pointer;
+}
+.notification-tabs {
+  display: flex;
+  gap: 0; /* no gap, single pill */
+  background-color: #f7f7f7;
+  border-radius: 12px; /* full pill */
+  overflow: hidden;
+  width: 100%;
+}
+
+.notification-tabs button {
+  flex: 1;
+  padding: 6px 0;
+  border: none;
+  background-color: transparent; /* inherit parent bg */
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.3s;
+  color: #555;
+}
+
+/* Active tab */
+.notification-tabs button.active {
+  background-color: #187D4F;
+  color: #ffffff;
+  border-radius: 12px; /* rounded for active only */
+}
+
+/* Optional: add hover effect */
+.notification-tabs button:hover {
+  background-color: #d1d1d1;
+}
+
+.notification-list {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+}
+
+.notification-item img {
+  width: 48px;
+  height: 48px;
+}
+
+/* Half-screen See All Panel */
+.notification-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: flex;
+}
+
+.notification-backdrop {
+  flex: 1;
+  background-color: rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px);
+}
+
+.notification-panel {
+  width: 50%;
+  background-color: var(--bg-color);
+  padding: 24px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.close-panel {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.notification-panel h3 {
+  margin: 0;
+}
+
+.notification-full-list .notification-item {
+  border-bottom: 1px solid #eee;
+  padding: 12px 0;
 }

@@ -1,21 +1,21 @@
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* global styles ya App.css me add karo */
 html, body {
-  overflow-x: hidden; 
-      
+  overflow-x: hidden;
 }
-/* --- Theme variables --- */
+
 body.light {
-  --bg-color: #fff;           /* Background color for light theme */
-  --text-color: #000;         /* Text color */
-  --primary-color: #1e7f4f;   /* Active menu item / primary color */
-  --secondary-color: #e9f7ef; /* Secondary color / active background */
-  --icon-invert: 0;           /* For icon brightness */
+  --bg-color: #fff;    
+  --text-color: #000;         
+  --primary-color: #1e7f4f;   
+  --secondary-color: #ffffff; 
+  --icon-invert: 0;           
+  --surface-color: #fff;   
 }
 
 body.dark {
@@ -24,21 +24,77 @@ body.dark {
   --primary-color: #a8f0c1;  
   --secondary-color: #1a3b2c;
   --icon-invert: 1;           
+  --surface-color: #1f1f1f;  
 }
 
-/* --- Apply variables globally --- */
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+  transition: background-color 0.3s, color 0.3s;
 }
 
+/* Reset all nested elements in dark mode */
+body.dark * {
+  background-color: unset !important;
+  color: inherit !important;
+}
+
+/* Dark mode background overrides */
+body.dark .orders-card,
+body.dark .target-card,
+body.dark .main-wrapper > div,
+body.dark .red-section {
+  background-color: #1f1f1f !important; /* white sections → red */
+  color: white !important;
+}
+
+body.dark .blue-section {
+  background-color: #1f1f1f !important; /* top stat cards section gray */
+  color: white !important;
+}
+
+body.dark .blue-section .stat-card {
+  background-color: #141414 !important; /* each stat card is black */
+  color: white !important;
+}
+body img { transition: filter 0.3s; 
+  filter: invert(var(--icon-invert)) brightness(1.2); }
+
+/* Optional: Dashboard bottom wrapper */
+body.dark .main-wrapper {
+  background-color: #111 !important; /* page bg black */
+}
+body.dark .expand-icon {
+  color: #ffffff !important;
+  background-color: #059669 !important; 
+}
+body.dark .ship-tag {
+  color: #F9A639 !important;
+  background-color: #683C03 !important; 
+  border: none;
+}
+
+body.dark .profile-bottom-sheet {
+  color: #ffffff !important; 
+  background-color: #141414 !important; 
+}
+body.dark .negative {
+  color: #d94a45 !important; 
+}
+
+body.dark .positive,.sales-amount .currency {
+  color: #2ea449 !important; 
+}
+.ship-tag .ship-icon {
+  fill: #F9A639;
+}
+
+/* App structure */
 .app {
   display: flex;
   width: 100vw;
   height: 100vh;
 }
-
 
 .main {
   flex: 1;
@@ -49,5 +105,6 @@ body {
 .content {
   flex: 1;
   padding: 24px;
-  background: #f8f9fb;
+  background: var(--surface-color); 
+  transition: background 0.3s;
 }
