@@ -1,10 +1,9 @@
-/* Entire page layout */
+
 .app {
   display: flex;
   height: 100vh;
 }
 
-/* Main area next to sidebar */
 .main {
   flex: 1;
   display: flex;
@@ -14,8 +13,8 @@
 /* Content area */
 .content {
   flex: 1;
-  padding: 20px;
-  overflow-y: auto;
+  padding: 16px;
+  /* overflow-y: auto; */
 }
 
 /* -----------------------------

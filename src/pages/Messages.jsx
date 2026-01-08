@@ -10,6 +10,7 @@ import binIcon from "../assets/bin.svg";
 import shopeeIcon from "../assets/shoppe.svg";
 import tokopediaIcon from "../assets/tokopedia.svg";
 import tiktokIcon from "../assets/tiktok.svg";
+import icon from "../assets/upload.svg";
 
 const contacts = [
   {
@@ -156,9 +157,30 @@ const Message = () => {
             alt={selectedContact.name}
             className="chat-avatar"
           />
-          <div className="chat-header-info">
-            <h2>{selectedContact.name}</h2>
-          </div>
+  <div className="chat-header-info">
+  <h2>{selectedContact.name}</h2>
+
+  {/* Show selected platform icon + name below contact name */}
+  {selectedPlatform !== "All" && (
+    <div className="chat-filter-display">
+      <img
+        src={
+          selectedPlatform === "Shopee"
+            ? shopeeIcon
+            : selectedPlatform === "Tokopedia"
+            ? tokopediaIcon
+            : tiktokIcon
+        }
+        alt={selectedPlatform}
+        className="chat-filter-icon"
+      />
+      <span className="chat-filter-text">{selectedPlatform}</span>
+    </div>
+  )}
+</div>
+
+
+
           <div className="chat-header-icons">
             <button className="chat-options">
               <img src={threeDotIcon} alt="More" />
@@ -185,17 +207,28 @@ const Message = () => {
             </div>
           ))}
         </div>
+<div className="chat-input-container">
+  <div className="chat-input-wrapper">
+    
+    {/* LEFT ICON */}
+    <img src={icon} className="input-icon left" alt="left-icon" />
 
-        <div className="chat-input-container">
-          <textarea
-            placeholder="Type your message here..."
-            rows={1}
-            className="chat-input"
-          />
-          <button className="send-btn" aria-label="Send message">
-            ➤
-          </button>
-        </div>
+    <textarea
+      placeholder="Type your message here..."
+      rows={1}
+      className="chat-input"
+    />
+
+    {/* RIGHT ICON */}
+    <img src={icon} className="input-icon right" alt="right-icon" />
+
+  </div>
+
+  <button className="send-btn">
+    <img src={icon} alt="send" className="send-icon" />
+  </button>
+</div>
+
       </div>
     </div>
   );

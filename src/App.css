@@ -6,7 +6,7 @@ html, body {
   padding: 0;      
 }
 
-.light {
+/* .light {
   --sidebar-bg: #ffffff;
   --text: #111827;
   background: #f6f7fb;
@@ -16,4 +16,4 @@ html, body {
   --sidebar-bg: #0f172a;
   --text: #e5e7eb;
   background: #020617;
-}
+} */
