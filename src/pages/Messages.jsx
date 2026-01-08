@@ -10,7 +10,6 @@ import binIcon from "../assets/bin.svg";
 import shopeeIcon from "../assets/shoppe.svg";
 import tokopediaIcon from "../assets/tokopedia.svg";
 import tiktokIcon from "../assets/tiktok.svg";
-import icon from "../assets/upload.svg";
 
 const contacts = [
   {
@@ -207,28 +206,17 @@ const Message = () => {
             </div>
           ))}
         </div>
-<div className="chat-input-container">
-  <div className="chat-input-wrapper">
-    
-    {/* LEFT ICON */}
-    <img src={icon} className="input-icon left" alt="left-icon" />
 
-    <textarea
-      placeholder="Type your message here..."
-      rows={1}
-      className="chat-input"
-    />
-
-    {/* RIGHT ICON */}
-    <img src={icon} className="input-icon right" alt="right-icon" />
-
-  </div>
-
-  <button className="send-btn">
-    <img src={icon} alt="send" className="send-icon" />
-  </button>
-</div>
-
+        <div className="chat-input-container">
+          <textarea
+            placeholder="Type your message here..."
+            rows={1}
+            className="chat-input"
+          />
+          <button className="send-btn" aria-label="Send message">
+            ➤
+          </button>
+        </div>
       </div>
     </div>
   );
