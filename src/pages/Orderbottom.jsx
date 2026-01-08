@@ -8,10 +8,10 @@ import ApplePad from '../assets/applepad.svg';
 import AppleWatch from '../assets/appplewatch.svg';
 
 // Customer images (dummy example)
-import GregImg from '../assets/profile.png';
-import RichardImg from '../assets/profile.png';
-import JerryImg from '../assets/profile.png';
-import SamImg from '../assets/profile.png';
+import GregImg from '../assets/Profile.png';
+import RichardImg from '../assets/Profile.png';
+import JerryImg from '../assets/Profile.png';
+import SamImg from '../assets/Profile.png';
 
 // Icons
 import ShippedIcon from '../assets/shipped-icon.svg';
