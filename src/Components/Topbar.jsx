@@ -2,11 +2,11 @@ import React, { useState, useRef, useEffect } from "react";
 import "../styles/topbar.css";
 import search from "../assets/search.svg";
 import bell from "../assets/bell.svg";
-import avatar from "../assets/Profile.svg";
+import avatar from "../assets/profile2.svg";
 import topArrow from "../assets/toparrow.svg";
 import closeIcon from "../assets/close.svg";
 
-import companyIcon from "../assets/Profile.svg";
+import companyIcon from "../assets/profile2.svg";
 import helpIcon from "../assets/help.svg";
 import settingsIcon from "../assets/setting.svg";
 import logoutIcon from "../assets/logout.svg";
